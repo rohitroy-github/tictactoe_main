@@ -54,9 +54,15 @@ ul {
   padding-left: 30px;
  }
  .game-info {
-  margin-left: 20px;
+  position: relative;
+  padding: 10px;
+  font-weight: bold;
+  border: black;
+  border-width: 2px;
+  border-radius: 2px;
  }
  .status {
   margin-bottom: 10px;
+  border: black 20px 2px;
  }
  

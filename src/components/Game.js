@@ -42,7 +42,7 @@ export default class Game extends React.Component {
     const winner = calculateWinner(current.squares)
 
     if(winner) {
-      status = 'Winner is' + winner
+      status = 'Winner is ' + winner
     } else {
       status = 'Next Player is ' + (this.state.xIsNext ? 'X' : 'O')
     }
@@ -51,17 +51,16 @@ export default class Game extends React.Component {
         <div className = "game-board">
           <Board clickAction = {(i) => this.handleClick(i)} squares = {current.squares}/>          
         </div>
-
         <div className = "game-info">
-          <div>{status}</div>
+        <div>{status}</div>
         </div>
-      </div>
+        </div>
     )
   }
 }
 
 function calculateWinner (squares) {
-  const possibilities = [
+  const winning_possibilities = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -72,8 +71,8 @@ function calculateWinner (squares) {
     [2, 4, 6]
   ]
 
-  for(let i = 0; i < possibilities.length; i++) {
-    const [a, b, c] = possibilities[i]
+  for(let i = 0; i < winning_possibilities.length; i++) {
+    const [a, b, c] = winning_possibilities[i]
     if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) {
       return squares[a]
     }
